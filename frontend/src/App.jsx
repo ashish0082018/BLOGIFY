@@ -2,7 +2,7 @@ import React from 'react'
 
 import Createpost from './components/Createpost'
 import Navbar from './components/Navbar'
-import Home from './components/home'
+import Home from './components/Home'
 import Allposts from './components/Allposts'
 import { Route, Routes } from 'react-router-dom'
 import Login from './components/Login'
