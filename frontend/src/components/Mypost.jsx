@@ -7,7 +7,7 @@ function Mypost({ title, content, image, authorname, postid }) {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/post/deletepost/${postid}`,{
+      const response = await axios.get(`https://blogify-h01h.onrender.com/api/v1/post/deletepost/${postid}`,{
         withCredentials:true
       });
       if (response.data.success) {

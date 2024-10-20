@@ -6,7 +6,7 @@ const Showlikes = ({ onClose, title, postid }) => {
 
   const show = async (postid) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/post/showlikes/${postid}`, {
+      const response = await axios.get(`https://blogify-h01h.onrender.com/api/v1/post/showlikes/${postid}`, {
         withCredentials: true,
       });
 

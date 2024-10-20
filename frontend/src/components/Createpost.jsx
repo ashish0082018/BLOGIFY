@@ -34,7 +34,7 @@ function Createpost() {
     setLoading(true); // Set loading to true
 
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/post/createpost", formData, {
+      const response = await axios.post("https://blogify-h01h.onrender.com/api/v1/post/createpost", formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

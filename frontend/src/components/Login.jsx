@@ -15,7 +15,7 @@ const [user,setuser]=useState({
 const handlelogin= async(e)=>{
   e.preventDefault()
  try{
-  const response= await axios.post("http://localhost:8000/api/v1/user/login",user,{
+  const response= await axios.post("https://blogify-h01h.onrender.com/api/v1/user/login",user,{
     withCredentials: true,
   });
   if(response.data.success){

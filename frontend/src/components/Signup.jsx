@@ -14,7 +14,7 @@ function Signup() {
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/user/signup", user, {
+      const response = await axios.post("https://blogify-h01h.onrender.com/api/v1/user/signup", user, {
         withCredentials: true,
       });
       if (response.data.success) {

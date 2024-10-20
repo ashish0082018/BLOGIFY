@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(urlencoded({extended:true}))
 
 const corsOptions={
-    origin:'http://localhost:5173',      // for the react connection we use this origin
+    origin:process.env.URL,      // for the react connection we use this origin
     credentials: true
 }
 app.use(cors(corsOptions))

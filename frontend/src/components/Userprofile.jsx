@@ -12,7 +12,7 @@ const [user,setuser]=useState({
 })
   const userdetails= async ()=>{
     try{
- const response= await axios.get("http://localhost:8000/api/v1/user/profile",{
+ const response= await axios.get("https://blogify-h01h.onrender.com/api/v1/user/profile",{
   withCredentials:true
  })
 console.log(response);
