@@ -9,7 +9,7 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get("https://blogify-h01h.onrender.com/api/v1/user/logout", {
+      const response = await axios.get("http://localhost:8000/api/v1/user/logout", {
         withCredentials: true,
       });
 
@@ -24,8 +24,8 @@ function Navbar() {
 
   return (
     <>
-      <div className="w-full flex justify-between items-center px-4 py-2 sm:px-7 text-lg bg-red-200 shadow  ">
-        <Link className="font-semibold tracking-tighter text-xl cursor:pointer hover:text-red-600 bg-red-400 px-4 py-1 rounded-full " to={"/"}>BLOGIFY</Link>
+      <div className="w-full flex justify-between items-center px-4 py-2 sm:px-7 text-lg bg-red-200 shadow">
+        <Link className="font-semibold tracking-tighter text-xl cursor-pointer hover:text-red-600 bg-red-400 px-4 py-1 rounded-full" to={"/"}>BLOGIFY</Link>
         
         <button 
           className="sm:hidden p-2"
@@ -36,14 +36,27 @@ function Navbar() {
           </svg>
         </button>
 
-        <div className={`flex flex-col sm:flex-row text-md gap-3 items-center font-semibold ${show ? 'block' : 'hidden'} sm:block`}>
-          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 " to={"/allposts"}>Explore</Link>
-          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 "  to={"/create"}>Create</Link>
-
-          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 " to={"/userpost"}>Your posts</Link>
-          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 " to={"/userprofile"}>Your Profile</Link>
-          <Link onClick={handleLogout} className="bg-red-600 text-white rounded-xl px-2 sm:px-3 hover:bg-red-800 ">Login/Logout</Link>
+        {/* Desktop Menu */}
+        <div className={`hidden sm:flex flex-col sm:flex-row text-md gap-3 items-center font-semibold`}>
+          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition" to={"/allposts"}>Explore</Link>
+          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition" to={"/create"}>Create</Link>
+          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition" to={"/userpost"}>Your Posts</Link>
+          <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition" to={"/userprofile"}>Your Profile</Link>
+          <Link onClick={handleLogout} className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition">Login/Logout</Link>
         </div>
+
+        {/* Mobile Menu */}
+        {show && (
+          <div className="absolute top-16 left-0 w-full bg-red-200 shadow-lg z-10 sm:hidden">
+            <div className="flex flex-col items-center p-4">
+              <Link className="bg-red-600 text-white rounded-xl w-full text-center mb-2 hover:bg-red-800 transition" to={"/allposts"}>Explore</Link>
+              <Link className="bg-red-600 text-white rounded-xl w-full text-center mb-2 hover:bg-red-800 transition" to={"/create"}>Create</Link>
+              <Link className="bg-red-600 text-white rounded-xl w-full text-center mb-2 hover:bg-red-800 transition" to={"/userpost"}>Your Posts</Link>
+              <Link className="bg-red-600 text-white rounded-xl w-full text-center mb-2 hover:bg-red-800 transition" to={"/userprofile"}>Your Profile</Link>
+              <Link onClick={handleLogout} className="bg-red-600 text-white rounded-xl w-full text-center hover:bg-red-800 transition">Login/Logout</Link>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
