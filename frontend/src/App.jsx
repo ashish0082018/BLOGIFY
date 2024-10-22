@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Userposts from './components/Userposts'
 import Userprofile from './components/Userprofile'
+import Readmore from './components/Readmore'
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
   <Route path='/login' element={<Login/>}> </Route>
   <Route path='/userpost' element={<Userposts/>}> </Route>
   <Route path='/userprofile' element={<Userprofile/>}> </Route>
+  <Route path='/readmore/:id' element={<Readmore/>}> </Route>
+
 </Routes>
 
 

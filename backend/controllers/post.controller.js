@@ -201,3 +201,17 @@ export const likePost = async (req, res) => {
 
 
 
+export const readmore= async (req,res)=>{
+    try{
+const postselect=req.params.id;
+const post=await Post.findById(postselect)
+return res.status(200).json({
+    post
+})
+}
+    catch(error){
+        console.log(error);
+        
+    }
+
+}
