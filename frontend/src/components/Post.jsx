@@ -11,7 +11,7 @@ function Post({ title, content, image, authorname, postid, likes }) {
 
   const handleLike = async (postid) => {
     setIsLike(true);
-    const response = await axios.get(`http://localhost:8000/api/v1/post/likepost/${postid}`, {
+    const response = await axios.get(`https://blogify-h01h.onrender.com/api/v1/post/likepost/${postid}`, {
       withCredentials: true,
     });
    
