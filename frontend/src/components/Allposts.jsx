@@ -9,16 +9,22 @@ function Allposts() {
 const [post,setpost]=useState([])
 
 const allposts= async ()=>{
+ try{
   const response=await axios.get("https://blogify-h01h.onrender.com/api/v1/post/allposts");
   const data= response.data.allpost;
   setpost(data)
+ }
+ catch(error){
+    console.log(error);
+    
+ }
 }
 
 
 
 useEffect(() => {
 allposts()
-})
+},[])
 
 
 
@@ -30,8 +36,8 @@ allposts()
       <div className="flex-grow w-screen flex flex-wrap gap-20 px-10 py-10  flex-col justify-center items-center bg-gradient-to-r from-red-800 to-red-200 ">
       
      {
-      post.map((elem)=>{
-       return <Post title={elem.title} content={elem.content} image={elem.image} authorname={elem.authorname} postid={elem._id} likes={elem.likes.length} />
+      post.map((elem,index)=>{
+       return <Post key={index} title={elem.title} content={elem.content} image={elem.image} authorname={elem.authorname} postid={elem._id} likes={elem.likes.length} />
       })
      }
 
