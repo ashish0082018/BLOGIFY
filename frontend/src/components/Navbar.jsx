@@ -42,7 +42,7 @@ function Navbar() {
           <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition" to={"/create"}>Create</Link>
           <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition" to={"/userpost"}>Your Posts</Link>
           <Link className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition" to={"/userprofile"}>Your Profile</Link>
-          <Link onClick={handleLogout} className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition">Login/Logout</Link>
+          <Link onClick={handleLogout} className="bg-red-600 text-white rounded-xl px-2 mx-2 sm:px-3 hover:bg-red-800 transition " to={"/login"}>Login/Logout</Link>
         </div>
 
         {/* Mobile Menu */}
@@ -53,7 +53,7 @@ function Navbar() {
               <Link className="bg-red-600 text-white rounded-xl w-full text-center mb-2 hover:bg-red-800 transition" to={"/create"}>Create</Link>
               <Link className="bg-red-600 text-white rounded-xl w-full text-center mb-2 hover:bg-red-800 transition" to={"/userpost"}>Your Posts</Link>
               <Link className="bg-red-600 text-white rounded-xl w-full text-center mb-2 hover:bg-red-800 transition" to={"/userprofile"}>Your Profile</Link>
-              <Link onClick={handleLogout} className="bg-red-600 text-white rounded-xl w-full text-center hover:bg-red-800 transition">Login/Logout</Link>
+              <Link onClick={handleLogout} className="bg-red-600 text-white rounded-xl w-full text-center hover:bg-red-800 transition" to={"/login"}>Login/Logout</Link>
             </div>
           </div>
         )}
